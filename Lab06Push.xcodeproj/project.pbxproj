@@ -14,6 +14,8 @@
 		FCD9BF941A91BCEB007AE07C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD9BF931A91BCEB007AE07C /* Images.xcassets */; };
 		FCD9BF971A91BCEB007AE07C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD9BF951A91BCEB007AE07C /* LaunchScreen.xib */; };
 		FCD9BFA31A91BCEB007AE07C /* Lab06PushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD9BFA21A91BCEB007AE07C /* Lab06PushTests.m */; };
+		FCD9BFAD1A91C088007AE07C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9BFAC1A91C088007AE07C /* MobileCoreServices.framework */; };
+		FCD9BFDD1A91C1BA007AE07C /* Pushwoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD9BFDC1A91C1BA007AE07C /* Pushwoosh.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		FCD9BF9C1A91BCEB007AE07C /* Lab06PushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab06PushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD9BFA11A91BCEB007AE07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCD9BFA21A91BCEB007AE07C /* Lab06PushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab06PushTests.m; sourceTree = "<group>"; };
+		FCD9BFAC1A91C088007AE07C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FCD9BFDC1A91C1BA007AE07C /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD9BFAD1A91C088007AE07C /* MobileCoreServices.framework in Frameworks */,
+				FCD9BFDD1A91C1BA007AE07C /* Pushwoosh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		FCD9BF7A1A91BCEB007AE07C = {
 			isa = PBXGroup;
 			children = (
+				FCD9BFDB1A91C1BA007AE07C /* Framework */,
 				FCD9BF851A91BCEB007AE07C /* Lab06Push */,
 				FCD9BF9F1A91BCEB007AE07C /* Lab06PushTests */,
 				FCD9BF841A91BCEB007AE07C /* Products */,
@@ -119,6 +126,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FCD9BFDB1A91C1BA007AE07C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9BFAC1A91C088007AE07C /* MobileCoreServices.framework */,
+				FCD9BFDC1A91C1BA007AE07C /* Pushwoosh.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +184,7 @@
 				TargetAttributes = {
 					FCD9BF821A91BCEB007AE07C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = QXF33N93KH;
 					};
 					FCD9BF9B1A91BCEB007AE07C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -343,9 +360,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chemamac/Desktop/maestria/Oaxaca-Push-master/Oaxaca-Push/Framework",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = Lab06Push/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chemamac/Desktop/maestria/Push-Notification_Tutorial-master/push/Oaxaca-Push/Framework/Pushwoosh.framework",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0a9e9882-3435-402b-b23e-341e47d37f75";
 			};
 			name = Debug;
 		};
@@ -353,9 +383,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chemamac/Desktop/maestria/Oaxaca-Push-master/Oaxaca-Push/Framework",
+					"$(PROJECT_DIR)/Framework",
+				);
 				INFOPLIST_FILE = Lab06Push/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/chemamac/Desktop/maestria/Push-Notification_Tutorial-master/push/Oaxaca-Push/Framework/Pushwoosh.framework",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0a9e9882-3435-402b-b23e-341e47d37f75";
 			};
 			name = Release;
 		};
